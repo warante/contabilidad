@@ -28,7 +28,7 @@
 			$pvp_beneficio = $_POST['pvp_beneficio'];
 			$fecha_reg = date("d-m-y  G:i:s");
 			
-			$insertar = "INSERT INTO `contabilidad`.`venta` (`cod_venta`, `modelo`, `distribuidor`, `cantidad`, `fecha_venta`, `estado`, `pvp_venta`, `pvp_beneficios`, `fecha registro`) VALUES ('$cod_venta', '$modelo', '$distribuidor', '$cantidad', '$fecha_venta', '$estado', '$pvp_venta', '$pvp_beneficio', '$fecha_reg');";
+			$insertar = "INSERT INTO `contabilidad`.`venta` (`cod_venta`, `modelo`, `distribuidor`, `cantidad`, `fecha_venta`, `estado`, `pvp_venta`, `pvp_beneficios`, `fecha_registro`) VALUES ('$cod_venta', '$modelo', '$distribuidor', '$cantidad', '$fecha_venta', '$estado', '$pvp_venta', '$pvp_beneficio', '$fecha_reg');";
 			$result = mysql_query($insertar, $conn) or die(mysql_error());
 			echo '<div class="alert alert-success"> Registro realizado con éxito </div>';
 		}

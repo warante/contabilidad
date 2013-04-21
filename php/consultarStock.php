@@ -6,6 +6,8 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 	<link rel="icon" type="image/icon" href="../img/favicon.ico" />
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/funciones.js"></script>
 </head>
 <body>
 
@@ -25,7 +27,7 @@
 		
 			<div class="span12 thumbnail">
 			<h1>Stock por distribuidor</h1>
-			
+			<form name="listadoStock" action="registrarVenta.php" method="post" enctype="multipart/form-data">
 			<?php 
 				while($filas = mysql_fetch_array($dis))
 				{
@@ -34,7 +36,7 @@
 					if(mysql_num_rows($stock)>0)
 					{
 						echo '<table class="table table-hover"> 
-								<caption>' . $filas['nombre'] . ' </caption> 
+								<caption><h3>' . $filas['nombre'] . '</h3></caption> 
 								<thread> 
 									<th>Modelo</th><th>Cantidad</th><th>Fecha</th><th>Acciones</th>
 								</thread>
@@ -45,7 +47,7 @@
 							echo '<tr><td>' . $filas2['modelo'] . '</td><td>' . $filas2['cantidad'] . '</td><td>' . $filas2['fecha'] . '</td><td><button type="button" class="btn btn-success">Vendida</button><button type="button" class="btn btn-warning">Modificar</button></td>
 									</tr>';
 						}
-						
+						echo '<tr><td><button type="button" class="btn btn-info">Registrar stock en este distribuidor</button></td><td></td><td></td><td></td></tr>';
 						echo '</tbody>
 							</table>';
 					}
@@ -57,7 +59,7 @@
 				<div>
 					<input type="button" name="volver" id="volver" value="Volver" class="btn btn-large" onclick="window.location='../index.html'"/>		
 				</div>
-			
+			</form>
 			</div>
 			
 		</div>

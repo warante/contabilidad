@@ -1,3 +1,10 @@
-$(document)ready(function(){
-	$('table').visualize({options});
+
+$(document).ready(function(){
+	$('.btn').click(function(){
+		$('form').submit();
+	});
+	
+	$('.carousel').carousel({
+		interval: 5000
+	});
 });

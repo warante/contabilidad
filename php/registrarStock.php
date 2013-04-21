@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Registrar Venta</title>	
+	<title>Registrar stock</title>	
 	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 	<link rel="icon" type="image/icon" href="../img/favicon.ico" />
@@ -23,6 +23,7 @@
 			$distribuidor = $_POST['distribuidor'];
 			$cantidad = $_POST['cantidad'];
 			$fecha = $_POST['fecha'];
+			
 			
 			$insertar = "INSERT INTO `contabilidad`.`stock` (`cod_stock`, `modelo`, `distribuidor`, `cantidad`, `fecha`) VALUES ('$cod_stock', '$modelo', '$distribuidor', '$cantidad', '$fecha');";
 			$result = mysql_query($insertar, $conn) or die(mysql_error());
@@ -54,10 +55,16 @@
 				<p>Distribuidor</p>
 				<select name="distribuidor" id="distribuidor">
 					<?php 
+					if(isset($_GET['distribuidor'])){
+						echo '<option value="' . $_GET['distribuidor'] . '">' . $_GET['distribuidor'] . '</option>';
+					}
+					else
+					{		
 						while($filas = mysql_fetch_array($dis))
 						{
 							echo '<option value="' . $filas['nombre'] . '">' . $filas['nombre'] . '</option>';
 						}
+					}
 					?>
 				</select>
 				

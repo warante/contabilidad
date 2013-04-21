@@ -1,9 +1,5 @@
 
-$(document).ready(function(){
-	$('.btn').click(function(){
-		$('form').submit();
-	});
-	
+$(document).ready(function(){	
 	$('.carousel').carousel({
 		interval: 5000
 	});

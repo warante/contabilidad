@@ -27,9 +27,8 @@
 		
 			<div class="span12 thumbnail">
 			<ul class="nav nav-tabs">
-			<li class="active">
-			<a href="#">Stock por distribuidor</a>
-			<li><a href="consultarStockMod.php">Stock por modelo</a></li>
+			<li><a href="consultarStock.php">Stock por distribuidor</a>
+			<li class="active"><a href="#">Stock por modelo</a></li>
   
 </ul>
 			<?php 

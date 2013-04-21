@@ -2,22 +2,10 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Stock</title>	
+	<title>Consultar venta</title>	
 	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 	<link rel="icon" type="image/icon" href="../img/favicon.ico" />
-	<link type="text/css" rel="stylesheet" href="../css/visualize.jQuery.css">
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/visualize.jQuery.js"></script>
-	<script type="text/javascript">
-		
-			$(function(){
-			$('table')
-   .visualize()
-   .appendTo('body')
-   .trigger('visualizeRefresh');
-});
-		</script>
 </head>
 <body>
 
@@ -39,51 +27,13 @@
 		<div class="row-fluid">
 		
 			<div class="span12 thumbnail">
+			<h1>Ventas por modelos</h1>
+
 			
-			<table>
-			<caption>Ventas por modelo</caption>
-			<thead>
+			<h1>Ventas por distribuidor</h1>
 			
-				<tr>
-					<td></td>
-			<?php 
-				while($filas = mysql_fetch_array($venta))
-				{
-					echo '<th>' . $filas['fecha_venta'] . '</th>';
-				}
+			<h1>Ventas por fecha<h1>
 			
-			?>
-				</tr>
-			</thead>
-			
-			<tbody>
-			<?php 
-				while($filas2 = mysql_fetch_array($mod))
-				{
-					echo '	<tr>
-								<th>' . $filas2['modelo'] . '</th>';
-								$venta = mysql_query($sql_venta, $conn) or die(mysql_error());
-								while($filas = mysql_fetch_array($venta))
-								{
-									if($filas['fecha_venta'] == $filas2['fecha_venta'])
-									{
-										echo '<td>' . $filas2['cantidad'] . '</td>';
-									}
-									else
-									{
-										echo '<td>0</td>';
-									}								
-					
-								}
-				}
-			
-			?>
-				
-			</tbody>
-				<div>
-					<input type="button" name="volver" id="volver" value="Volver" class="btn btn-large" onclick="window.location='../index.html'"/>		
-				</div>
-			</table>
 			</div>
 			
 		</div>

@@ -72,7 +72,7 @@
 				<input type="text" value="1" name="cantidad" id="cantidad"/>
 				
 				<p>Fecha</p>
-				<input type="date" name="fecha" id="fecha"/>
+				<input type="date" name="fecha" id="fecha" value="<?php echo date('Y-m-d'); ?>"/>
 								
 				<div>
 					<input type="button" name="volver" id="volver" value="Volver" class="btn btn-large" onclick="window.location='../index.html'"/>

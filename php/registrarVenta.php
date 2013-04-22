@@ -122,7 +122,7 @@
 				?>
 				
 				<p>Fecha</p>
-				<input type="date" name="fecha" id="fecha"/>
+				<input type="date" name="fecha" id="fecha" value="<?php echo date('Y-m-d'); ?>"/>
 				
 				<p>Estado</p>
 				<select name="estado" id="estado">

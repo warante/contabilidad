@@ -45,11 +45,25 @@
 				<h2>Datos de gasto</h2>
 				
 				<p>Categoria</p>
-				<select name="categoria" id="categoria">					
+				<select name="categoria" id="categoria">
+				<?php 
+					if(isset($_GET['Categoria']))
+					{
+						echo '<option value="' . $_GET['Categoria'] . '">' . $_GET['Categoria'] . '</option>';
+					}
+					else
+					{
+					?>
+
+									
 					<option value="Diadema ancha">Diadema ancha</option>
 					<option value="Diadema fina">Diadema fina</option>
 					<option value="Forro">Forro</option>
 					<option value="Goma eva">Goma eva</option>					
+				
+				<?php 
+				}
+				?>
 				</select>
 				
 				<p>Color</p>

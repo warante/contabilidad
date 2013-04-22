@@ -25,36 +25,39 @@
 		$sql_mod = "SELECT * FROM `modelo`";
 		$mod = mysql_query($sql_mod, $conn) or die(mysql_error());		
 		
+		$sql_dis = "SELECT * FROM `distribuidor`";
+		$dis = mysql_query($sql_dis, $conn) or die(mysql_error());	
+		
 ?>
 		<div class="row-fluid">
 		
 			<div class="span12 thumbnail">
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#">Ventas por modelos</a></li>
-				<li><a href="consultarVenta2.php">Ventas por distribuidor</a></li>	
+				<li><a href="consultarVenta.php">Ventas por modelo</a></li>	
+				<li class="active"><a href="#">Ventas por distribuidor</a></li>				
 			</ul>
 			
 			<ul class="nav nav-pills">
 				<li class="active"><a href="#">Todos</a></li>
 				<?php 					
-					while($filas = mysql_fetch_array($mod))
+					while($filas = mysql_fetch_array($dis))
 					{
-						echo '<li><a href="consultarVentaMod.php?modelo=' .$filas['nombre'] . '">' .$filas['nombre'] . '</a></li>';
+						echo '<li><a href="consultarVentaDis.php?distribuidor=' .$filas['nombre'] . '">' .$filas['nombre'] . '</a></li>';
 					}
 				?>
 </ul>
 			<table class="table table-hover">
 			
 			<?php 
-				$mod = mysql_query($sql_mod, $conn) or die(mysql_error());
-				while($filas = mysql_fetch_array($mod))
+				$dis = mysql_query($sql_dis, $conn) or die(mysql_error());
+				while($filas = mysql_fetch_array($dis))
 				{
-					$sql_stock = "SELECT * FROM `venta` WHERE `modelo` LIKE '" . $filas['nombre'] . "'";
+					$sql_stock = "SELECT * FROM `venta` WHERE `distribuidor` LIKE '" . $filas['nombre'] . "'";
 					$stock = mysql_query($sql_stock, $conn) or die(mysql_error());
 					if(mysql_num_rows($stock)>0)
 					{
 						echo '<table class="table table-hover"> 
-								<caption><h3><a href="consultarVentaMod.php?modelo=' .$filas['nombre'] . '">' . $filas['nombre'] . '</a></h3></caption> 
+								<caption><h3><a href="consultarVentaDis.php?distribuidor=' .$filas['nombre'] . '">' . $filas['nombre'] . '</a></h3></caption> 
 								<thread> 
 									<th>Cantidad</th><th>Pvp venta</th><th>Pvp beneficio</t>
 								</thread>

@@ -13,6 +13,10 @@
 				$mostrar = 1;
 			}
 		}
+		if(isset($_GET['salir']))
+		{
+			session_destroy();
+		}
 ?>
 <!DOCTYPE HTML>
 <html lang="es">

@@ -68,14 +68,19 @@
 							$cantidad_total += $filas2['cantidad'];
 							$pvp_coste_total += $filas2['pvp'] * $filas2['cantidad'];
 						}
-						echo '<tr><td><b>' . $cantidad_total . '</b></td><td><b>' . $pvp_coste_total . '</b></td><td><button type="button" class="btn btn-success" onclick="window.location=\'registrarGastos.php?Categoria=' . $categorias[$i] . '\'">Comprar</button></td>
+						echo '<tr><td><b>' . $cantidad_total . '</b></td><td><b>' . $pvp_coste_total . '</b></td><td><button type="button" class="btn btn-success" onclick="window.location=\'registrarGastos.php?Categoria=' . $categorias[$i] . '\'">Comprar más</button></td>
 							</tbody>
 							</table>';			
 					}
 				?>	
 				
 				<div>
-						<input type="button" name="volver" id="volver" value="Volver" class="btn btn-large" onclick="window.location='../index.html'"/>		
+					<br />
+						<input type="button" name="volver" id="volver" value="Principal" class="btn btn-large" onclick="window.location='index.php'"/>		
+						<input type="button" name="volver" id="volver" value="Ir a ventas" class="btn btn-success btn-large" onclick="window.location='consultarVenta.php'"/>							
+						<input type="button" name="volver" id="volver" value="Ir a ganancias" class="btn btn-success btn-large" onclick="window.location='consultarGanancias.php'"/>			
+						<input type="button" name="volver" id="volver" value="Ir a stock" class="btn btn-success btn-large" onclick="window.location='consultarStock.php'"/>
+						<input type="button" name="volver" id="volver" value="Cerrar sesion" class="btn btn-inverse btn-large" onclick="window.location='../index.php?salir=salir'"/>	
 				</div>
 				
 			</div>

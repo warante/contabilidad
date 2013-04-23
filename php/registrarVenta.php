@@ -142,8 +142,13 @@
 							<input type="text" name="codigo" id="codigo" class="fade" value="<?php echo $_GET['codigo'];?>" />
 							
 							<div>
-								<input type="button" name="volver" id="volver" value="Volver" class="btn btn-large" onclick="window.location='../index.html'"/>
-								<input type="submit" name="registrar" id="registrar" value="Registrar" class="btn btn-primary btn-large"/>					
+								<br />
+								<input type="button" name="volver" id="volver" value="Principal" class="btn btn-large" onclick="window.location='index.php'"/>
+								<input type="submit" name="registrar" id="registrar" value="Registrar" class="btn btn-primary btn-large"/>
+								<input type="button" name="volver" id="volver" value="Ir a ventas" class="btn btn-success btn-large" onclick="window.location='consultarVenta.php'"/>
+								<input type="button" name="volver" id="volver" value="Ir a stock" class="btn btn-success btn-large" onclick="window.location='consultarStock.php'"/>
+								<input type="button" name="volver" id="volver" value="Ir a ganancias" class="btn btn-success btn-large" onclick="window.location='consultarGanancias.php'"/>
+						<input type="button" name="volver" id="volver" value="Cerrar sesion" class="btn btn-inverse btn-large" onclick="window.location='../index.php?salir=salir'"/>																	
 							</div>					
 						</form>
 					

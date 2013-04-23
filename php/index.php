@@ -104,11 +104,15 @@
 			</div>
 			
 			<div class="row-fluid">
-				<div class="span10 offset1">
+				<div class="span10 thumbnail">
 					<fieldset>
 						<a href="consultarGanancias.php" class="btn btn-large btn-block btn-danger">Consultar Ganancias</a>						
 					</fieldset>
-					<br />
+				</div>
+				<div class="span2 thumbnail">
+					<fieldset>
+						<a href="../index.php?salir=salir" class="btn btn-large btn-block btn-inverse">Cerrar sesion</a>						
+					</fieldset>
 				</div>
 			</div>					
 			

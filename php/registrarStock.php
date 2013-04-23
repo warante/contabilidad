@@ -49,9 +49,16 @@
 					<p>Módelo</p>
 					<select name="modelo" id="modelo">
 						<?php 
-							while($filas = mysql_fetch_array($mod))
-							{
-								echo '<option value="' . $filas['nombre'] . '">' . $filas['nombre'] . '</option>';
+							
+							if(isset($_GET['modelo'])){
+								echo '<option value="' . $_GET['modelo'] . '">' . $_GET['modelo'] . '</option>';
+							}
+							else
+							{		
+								while($filas = mysql_fetch_array($mod))
+								{
+									echo '<option value="' . $filas['nombre'] . '">' . $filas['nombre'] . '</option>';
+								}
 							}
 						?>
 					</select>
@@ -79,8 +86,12 @@
 					<input type="date" name="fecha" id="fecha" value="<?php echo date('Y-m-d'); ?>"/>
 									
 					<div>
-						<input type="button" name="volver" id="volver" value="Volver" class="btn btn-large" onclick="window.location='../index.html'"/>
-						<input type="submit" name="registrar" id="registrar" value="Registrar" class="btn btn-primary btn-large"/>					
+						<input type="button" name="volver" id="volver" value="Principal" class="btn btn-large" onclick="window.location='index.php'"/>
+						<input type="submit" name="registrar" id="registrar" value="Registrar" class="btn btn-primary btn-large"/>							
+						<input type="button" name="volver" id="volver" value="Ir a stock" class="btn btn-success btn-large" onclick="window.location='consultarStock.php'"/>
+						<input type="button" name="volver" id="volver" value="Ir a ventas" class="btn btn-success btn-large" onclick="window.location='consultarVenta.php'"/>
+						<input type="button" name="volver" id="volver" value="Ir a ganancias" class="btn btn-success btn-large" onclick="window.location='consultarGanancias.php'"/>
+						<input type="button" name="volver" id="volver" value="Cerrar sesion" class="btn btn-inverse btn-large" onclick="window.location='../index.php?salir=salir'"/>				
 					</div>
 				
 				</form>

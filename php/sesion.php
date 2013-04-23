@@ -4,4 +4,4 @@
 		{
 			header('Location: ../index.php');
 		}
-?>
+?> 

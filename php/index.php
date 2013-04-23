@@ -1,15 +1,18 @@
+<?php
+	require('sesion.php');
+?>
 <!DOCTYPE HTML>
 <html lang="es">
 
 <head>
 	<meta charset="UTF-8">
 	<title>Contabilidad</title>	
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-	<link href="css/general.css" rel="stylesheet" media="screen">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/funciones.js"></script>
+	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+	<link href="../css/general.css" rel="stylesheet" media="screen">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+	<script type="text/javascript" src="../js/funciones.js"></script>
 </head>
 
 <body>
@@ -18,7 +21,8 @@
 		<div id="cuerpo" class="row-fluid">
 		
 			<div class="row-fluid">
-				<div class="span6 offset3">
+				<div class="span6 offset3">			
+					<br />
 					<div id="myCarousel" class="carousel slide">
 						<ol class="carousel-indicators">
 						  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -26,49 +30,49 @@
 						</ol>
 						<div class="carousel-inner">
 							<div class="active item">
-								<img src="img/1.jpg" alt="">
+								<img src="../img/1.jpg" alt="">
 								<div class="carousel-caption">
 								  <h4>Draculaura</h4>
 								  <p>Producto estrella</p>
 								</div>
 							</div>
 							<div class="item">
-								<img src="img/2.jpg" alt="">
+								<img src="../img/2.jpg" alt="">
 								<div class="carousel-caption">
 								  <h4>Loba</h4>
 								  <p>La favorita de las madres</p>
 								</div>
 							</div>
 							<div class="item">
-								<img src="img/3.jpg" alt="">
+								<img src="../img/3.jpg" alt="">
 								<div class="carousel-caption">
 								  <h4>Frankie</h4>
 								  <p>No es gran cosa...</p>
 								</div>
 							</div>
 							  <div class="item">
-								<img src="img/4.jpg" alt="">
+								<img src="../img/4.jpg" alt="">
 								<div class="carousel-caption">
 								  <h4>Bob esponja</h4>
 								  <p>El maldito</p>
 								</div>
 							</div>
 							<div class="item">
-								<img src="img/5.jpg" alt="">
+								<img src="../img/5.jpg" alt="">
 								<div class="carousel-caption">
 								  <h4>Yelps</h4>
 								  <p>Una vez se vendio una</p>
 								</div>
 							</div>
 							<div class="item">
-								<img src="img/6.jpg" alt="">
+								<img src="../img/6.jpg" alt="">
 								<div class="carousel-caption">
 								  <h4>Cleo</h4>
 								  <p>Mucho ruido y pocas nueves</p>
 								</div>
 							</div>
 							<div class="item">
-								<img src="img/7.jpg" alt="">
+								<img src="../img/7.jpg" alt="">
 								<div class="carousel-caption">
 								  <h4>Hello Kitty</h4>
 								  <p>El aspirante a producto estrella</p>
@@ -84,17 +88,17 @@
 			<div class="row-fluid">
 				<div class="span6 thumbnail">			
 				<fieldset>
-					<a href="php/registrarVenta.php" class="btn btn-large btn-block btn-success">Registrar venta</a>
-					<a href="php/registrarStock.php" class="btn btn-large btn-block btn-success">Registrar stock</a>
-					<a href="php/registrarGastos.php" class="btn btn-large btn-block btn-success">Registrar gastos</a>
+					<a href="registrarVenta.php" class="btn btn-large btn-block btn-success">Registrar venta</a>
+					<a href="registrarStock.php" class="btn btn-large btn-block btn-success">Registrar stock</a>
+					<a href="registrarGastos.php" class="btn btn-large btn-block btn-success">Registrar gastos</a>
 				</fieldset>	
 				</div>
 				
 				<div class="span6 thumbnail">
 				<fieldset>
-					<a href="php/consultarVenta.php" class="btn btn-large btn-block btn-primary">Consultar ventas</a>
-					<a href="php/consultarStock.php" class="btn btn-large btn-block btn-primary">Consultar stock</a>
-					<a href="php/consultarGastos.php" class="btn btn-large btn-block btn-primary">Consultar gastos</a>
+					<a href="consultarVenta.php" class="btn btn-large btn-block btn-primary">Consultar ventas</a>
+					<a href="consultarStock.php" class="btn btn-large btn-block btn-primary">Consultar stock</a>
+					<a href="consultarGastos.php" class="btn btn-large btn-block btn-primary">Consultar gastos</a>
 				</legend>
 				</div>			
 			</div>
@@ -102,7 +106,7 @@
 			<div class="row-fluid">
 				<div class="span10 offset1">
 					<fieldset>
-						<a href="php/consultarGanancias.php" class="btn btn-large btn-block btn-danger">Consultar Ganancias</a>						
+						<a href="consultarGanancias.php" class="btn btn-large btn-block btn-danger">Consultar Ganancias</a>						
 					</fieldset>
 					<br />
 				</div>

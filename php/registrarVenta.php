@@ -1,3 +1,6 @@
+<?php
+	require('sesion.php');
+?>
 <!DOCTYPE HTML>
 <html lang="es">
 

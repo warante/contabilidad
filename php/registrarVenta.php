@@ -135,9 +135,7 @@
 				
 				<p>Precio beneficio</p>
 				<input type="text" name="pvp_beneficio" id="pvp_beneficio" value="6" />
-				
-				<p>Codigo</p>
-				<input type="text" name="codigo" id="codigo" value="<?php echo $_GET['codigo'];?>" />
+				<input type="text" name="codigo" id="codigo" class="fade" value="<?php echo $_GET['codigo'];?>" />
 				
 				<div>
 					<input type="button" name="volver" id="volver" value="Volver" class="btn btn-large" onclick="window.location='../index.html'"/>

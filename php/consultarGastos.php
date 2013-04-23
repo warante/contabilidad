@@ -45,7 +45,7 @@
 					foreach($array as $i => $value)
 					{
 						echo '<table class="table table-hover"> 
-								<caption><h3><a href="consultarGast.php?modelo=' . $array[$i] . '">' . $array[$i] . '</a></h3></caption> 
+								<caption><h3><a href="consultarGasMat.php?categoria=' . $array[$i] . '">' . $array[$i] . '</a></h3></caption> 
 							<thread> 
 								<th>Cantidad</th><th>Pvp gasto</th><th>Acciones</th>
 							</thread>

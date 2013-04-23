@@ -84,10 +84,10 @@
 					<option value="Verde oscuro">Verde oscuro</option>
 				</select>
 				
-				<p>Cantidad</p>
-				<input type="text" value="1" name="cantidad" id="cantidad"/>
+				<p>Cantidad (unidades o metros)</p>
+				<input type="text" name="cantidad" id="cantidad" placeholder="usar el punto para los decimales"/>
 				
-				<p>Pvp</p>
+				<p>Pvp (por unidad o metro)</p>
 				<input type="text" name="pvp" id="pvp" placeholder="usar el punto para los decimales"/>
 				
 				<p>Fecha</p>

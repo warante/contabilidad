@@ -52,7 +52,7 @@
 					$gas = mysql_query($sql_gas, $conn) or die(mysql_error());
 						echo '<table class="table table-hover"> 
 								<thread> 
-									<th>Cantidad</th><th>Pvp coste</th><th>Pvp coste total</th><th>Fecha</th>
+									<th>Color</th><th>Cantidad</th><th>Pvp coste</th><th>Pvp coste total</th><th>Fecha</th>
 								</thread>
 								<tbody>';
 						$cantidad_total = 0;
@@ -62,7 +62,7 @@
 						{		
 							$cantidad_total += $filas2['cantidad'];
 							$pvp_gasto_total += $filas2['pvp'] * $filas2['cantidad'];
-							echo '<tr><td>' . $filas2['cantidad'] . '</td><td>' . $filas2['pvp'] . '</td><td>' . $pvp_gasto_total . '</td><td>' . $filas2['fecha_compra'] . '</td></tr>';
+							echo '<tr><td>' . $filas2['color'] . '<td>' . $filas2['cantidad'] . '</td><td>' . $filas2['pvp'] . '</td><td>' . $pvp_gasto_total . '</td><td>' . $filas2['fecha_compra'] . '</td></tr>';
 							
 						}
 						

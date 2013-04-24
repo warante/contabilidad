@@ -68,7 +68,7 @@
 								<img src="../img/6.jpg" alt="">
 								<div class="carousel-caption">
 								  <h4>Cleo</h4>
-								  <p>Mucho ruido y pocas nueves</p>
+								  <p>Mucho ruido y pocas nueces</p>
 								</div>
 							</div>
 							<div class="item">

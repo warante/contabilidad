@@ -55,14 +55,9 @@
 				$result = mysql_query($insertar, $conn) or die(mysql_error());
 		?>
 				<div class="alert alert-success"> Registro realizado con éxito, venga! a producir! </div>
-				<div>
-						<input type="button" name="volver" id="volver" value="Volver" class="btn btn-large" onclick="window.location='../index.html'"/>			
-				</div>
 		<?php
 				
-			}
-			else
-			{			
+			}	
 				$sql_mod = "SELECT * FROM `modelo`";
 				$mod = mysql_query($sql_mod, $conn) or die(mysql_error());
 				
@@ -155,9 +150,6 @@
 					</div>
 					
 				</div>
-		<?php
-			}
-		?>
 		
 	</div>
 	

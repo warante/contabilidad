@@ -10,6 +10,9 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 	<link href="../css/general.css" rel="stylesheet" media="screen">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+	<script type="text/javascript" src="../js/funciones.js"></script>
 </head>
 
 <body>
@@ -49,7 +52,7 @@
 				</ul>
 				
 				<?php 
-					$sql_stock = "SELECT * FROM `stock` WHERE `distribuidor` LIKE '" . $_GET['distribuidor'] . "'";
+					$sql_stock = "SELECT * FROM `stock` WHERE `distribuidor` LIKE '" . $_GET['distribuidor'] . "' ORDER BY `fecha`";
 					$stock = mysql_query($sql_stock, $conn) or die(mysql_error());
 					echo '<table class="table table-hover"> 
 							<thread> 

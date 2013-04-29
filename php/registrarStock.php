@@ -29,7 +29,7 @@
 				$cantidad = $_POST['cantidad'];
 				$fecha = $_POST['fecha'];			
 				
-				$insertar = "INSERT INTO `contabilidad`.`stock` (`cod_stock`, `modelo`, `distribuidor`, `cantidad`, `fecha`) VALUES ('$cod_stock', '$modelo', '$distribuidor', '$cantidad', '$fecha');";
+				$insertar = "INSERT INTO `stock` (`cod_stock`, `modelo`, `distribuidor`, `cantidad`, `fecha`) VALUES ('$cod_stock', '$modelo', '$distribuidor', '$cantidad', '$fecha');";
 				$result = mysql_query($insertar, $conn) or die(mysql_error());
 				echo '<div class="alert alert-success"> Registro realizado con éxito </div>';
 			}

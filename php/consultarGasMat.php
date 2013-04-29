@@ -48,7 +48,7 @@
 					</thread>
 					<tbody>			
 				<?php 
-					$sql_gas = "SELECT * FROM `gastos` WHERE `categoria` LIKE '" . $_GET['categoria'] . "'";
+					$sql_gas = "SELECT * FROM `gastos` WHERE `categoria` LIKE '" . $_GET['categoria'] . "' ORDER BY `fecha_compra`";
 					$gas = mysql_query($sql_gas, $conn) or die(mysql_error());
 					$cantidad_total = 0;
 					$pvp_gasto_total = 0;

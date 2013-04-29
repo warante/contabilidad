@@ -38,16 +38,16 @@
 				{
 					$filas['cantidad'] = $filas['cantidad'] - $cantidad;
 					$sql_actualizar = "SELECT * FROM `stock` WHERE `cod_stock` LIKE '" . $codigo . "'";
-					$sql_actualizar = "UPDATE `contabilidad`.`stock` SET `cantidad` = '" . $filas['cantidad'] . "' WHERE `stock`.`cod_stock` = '" . $codigo . "'";
+					$sql_actualizar = "UPDATE `stock` SET `cantidad` = '" . $filas['cantidad'] . "' WHERE `stock`.`cod_stock` = '" . $codigo . "'";
 					$stock_act = mysql_query($sql_actualizar, $conn) or die(mysql_error());		
 				}
 				else
 				{				
-					$sql_borrar = "DELETE FROM `contabilidad`.`stock` WHERE `stock`.`cod_stock` = '" . $codigo . "'";
+					$sql_borrar = "DELETE FROM `stock` WHERE `stock`.`cod_stock` = '" . $codigo . "'";
 					$stock_borrar = mysql_query($sql_borrar, $conn) or die(mysql_error());				
 				}				
 				
-				$insertar = "INSERT INTO `contabilidad`.`stock` (`cod_stock`, `modelo`, `distribuidor`, `cantidad`, `fecha`) VALUES ('$cod_stock', '$modelo', '$distribuidor', '$cantidad', '$fecha');";
+				$insertar = "INSERT INTO `stock` (`cod_stock`, `modelo`, `distribuidor`, `cantidad`, `fecha`) VALUES ('$cod_stock', '$modelo', '$distribuidor', '$cantidad', '$fecha');";
 				$result = mysql_query($insertar, $conn) or die(mysql_error());
 		?>
 				

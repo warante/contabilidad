@@ -56,7 +56,7 @@
 					<tbody>
 				
 						<?php 
-							$sql_stock = "SELECT * FROM `venta` WHERE `modelo` LIKE '" . $_GET['modelo'] . "'";
+							$sql_stock = "SELECT * FROM `venta` WHERE `modelo` LIKE '" . $_GET['modelo'] . "' ORDER BY `fecha_venta`";
 							$stock = mysql_query($sql_stock, $conn) or die(mysql_error());
 								
 							$cantidad_total = 0;

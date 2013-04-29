@@ -31,7 +31,7 @@
 				$fecha_compra = $_POST['fecha'];			
 				$fecha_registro = date("d-m-y  G:i:s");				
 				
-				$insertar = "INSERT INTO `contabilidad`.`gastos` (`cod_gas`, `categoria`, `color`, `pvp`, `cantidad`, `fecha_compra`, `fecha_registro`) VALUES ('$cod_gas', '$categoria', '$color', '$pvp', '$cantidad', '$fecha_compra', '$fecha_registro');";
+				$insertar = "INSERT INTO `gastos` (`cod_gas`, `categoria`, `color`, `pvp`, `cantidad`, `fecha_compra`, `fecha_registro`) VALUES ('$cod_gas', '$categoria', '$color', '$pvp', '$cantidad', '$fecha_compra', '$fecha_registro');";
 				$result = mysql_query($insertar, $conn) or die(mysql_error());
 				echo '<div class="alert alert-success"> Registro realizado con éxito </div>';
 			}

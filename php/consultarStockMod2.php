@@ -49,7 +49,7 @@
 				</ul>
 				
 				<?php 
-					$sql_stock = "SELECT * FROM `stock` WHERE `modelo` LIKE '" . $_GET['modelo'] . "'";
+					$sql_stock = "SELECT * FROM `stock` WHERE `modelo` LIKE '" . $_GET['modelo'] . "' ORDER BY `fecha`";
 					$stock = mysql_query($sql_stock, $conn) or die(mysql_error());
 					echo '<table class="table table-hover"> 
 							<thread> 

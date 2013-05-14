@@ -56,9 +56,11 @@
 					while($filas2 = mysql_fetch_array($gas))
 					{		
 						$cantidad_total += $filas2['cantidad'];
-						$pvp_gasto_total += $filas2['pvp'] * $filas2['cantidad'];
-						echo '<tr><td>' . $filas2['color'] . '<td>' . $filas2['cantidad'] . '</td><td>' . $filas2['pvp'] . '</td><td>' . $pvp_gasto_total . '</td><td>' . $filas2['fecha_compra'] . '</td></tr>';
-					}			
+						$gasto = $filas2['pvp'] * $filas2['cantidad'];
+						$pvp_gasto_total += $gasto;
+						echo '<tr><td>' . $filas2['color'] . '<td>' . $filas2['cantidad'] . '</td><td>' . $filas2['pvp'] . '</td><td>' . $gasto . '</td><td>' . $filas2['fecha_compra'] . '</td></tr>';
+					}	
+					echo '<tr><td><b>Total</b></td><td><b>' . $cantidad_total . '</b></td><td><b>-</b></td><td><b>' . $pvp_gasto_total . '</b></td><td>-</td>';
 				?>
 					
 					</tbody>

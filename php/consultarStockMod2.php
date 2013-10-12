@@ -60,7 +60,7 @@
 									
 					while($filas2 = mysql_fetch_array($stock))
 					{			
-						echo '<tr><td><a href="consultarStockDis.php?distribuidor=' . $filas2['distribuidor'] . '">' . $filas2['distribuidor'] . '</a></td><td>' . $filas2['cantidad'] . '</td><td>' . $filas2['fecha'] . '</td><td><button type="button" class="btn btn-success" onclick="window.location=\'registrarVenta.php?distribuidor=' . $filas2['distribuidor'] . '&modelo=' . $_GET['modelo'] . '&codigo=' . $filas2['cod_stock'] .'&cantidad=' . $filas2['cantidad'] . '\'">Vendida</button><button type="button" class="btn btn-warning" onclick="window.location=\'modificarStock.php?codigo=' . $filas2['cod_stock'] . '\'">Modificar</button></td></tr>';
+						echo '<tr><td><a href="consultarStockDis.php?distribuidor=' . $filas2['distribuidor'] . '">' . $filas2['distribuidor'] . '</a></td><td>' . $filas2['cantidad'] . '</td><td>' . $filas2['fecha'] . '</td><td><button type="button" class="btn btn-success" onclick="window.location=\'registrarVenta.php?distribuidor=' . $filas2['distribuidor'] . '&modelo=' . $_GET['modelo'] . '&codigo=' . $filas2['cod_stock'] .'&cantidad=' . $filas2['cantidad'] . '\'">Vendida</button><button type="button" class="btn btn-warning" onclick="window.location=\'modificarStock.php?codigo=' . $filas2['cod_stock'] . '\'">Modificar</button><button type="button" class="btn btn-danger" onclick="window.location=\'borrarStock.php?codigo=' . $filas2['cod_stock'] . '\'">Borrar</button></td></tr>';
 						$cantidad_total += $filas2['cantidad'];
 					}
 					echo '<tr><td><b>Totales</b><td><b>' . $cantidad_total . '</b></td><td></td><td></td></tr>';

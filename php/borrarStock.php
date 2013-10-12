@@ -6,7 +6,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Modificar stock</title>	
+	<title>Borrar stock</title>	
 	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 	<link href="../css/general.css" rel="stylesheet" media="screen">
@@ -21,14 +21,12 @@
 			$conn = mysql_connect($server, $db_user, $db_pass) or die(mysql_error());
 			mysql_select_db($database, $conn);
 			
-			if(isset($_POST['registrar']))
-			{			
-				$cod_stock = time();
+			if(isset($_POST['borrar']))
+			{		
 				$modelo = $_POST['modelo'];
 				$distribuidor = $_POST['distribuidor'];
 				$cantidad = $_POST['cantidad'];
-				$codigo = $_POST['codigo'];
-				$fecha = $_POST['fecha'];			
+				$codigo = $_POST['codigo'];		
 				
 				$sql_stock = "SELECT * FROM `stock` WHERE `cod_stock` LIKE '" . $codigo . "'";
 				$stock = mysql_query($sql_stock, $conn) or die(mysql_error());			
@@ -44,15 +42,12 @@
 				{				
 					$sql_borrar = "DELETE FROM `stock` WHERE `stock`.`cod_stock` = '" . $codigo . "'";
 					$stock_borrar = mysql_query($sql_borrar, $conn) or die(mysql_error());				
-				}				
-				
-				$insertar = "INSERT INTO `stock` (`cod_stock`, `modelo`, `distribuidor`, `cantidad`, `fecha`) VALUES ('$cod_stock', '$modelo', '$distribuidor', '$cantidad', '$fecha');";
-				$result = mysql_query($insertar, $conn) or die(mysql_error());
+				}	
 		?>
 				
 				<div class="row-fluid">				
 					<div class="span12 thumbnail">
-						<div class="alert alert-success"> Registro realizado con éxito, venga! a producir! </div>
+						<div class="alert alert-success"> Stock borrado con éxito, venga! a producir! </div>
 						<div>
 							<br />
 							<input type="button" name="volver" id="volver" value="Principal" class="btn btn-large" onclick="window.location='index.php'"/>	
@@ -81,9 +76,9 @@
 				
 					<div class="span12 thumbnail">
 					
-						<form name="datos_registro" action="modificarStock.php" method="post" enctype="multipart/form-data">
-							<h2>Modificar stock</h2>
-							<h4>Introduce el nuevo distribuidor, la cantidad que se desea transferir y la fecha</h4>
+						<form name="datos_registro" action="borrarStock.php" method="post" enctype="multipart/form-data">
+							<h2>Borrar stock</h2>
+							<h4>Datos del estock a borrar (puede modificar la cantidad)</h4>
 							
 							<p>Módelo</p>
 							<select name="modelo" id="modelo">
@@ -95,13 +90,7 @@
 							<p>Distribuidor</p>
 							<select name="distribuidor" id="distribuidor">
 								<?php 	
-									while($filas = mysql_fetch_array($dis))
-									{
-										if($fila['distribuidor'] != $filas['nombre'])
-										{
-											echo '<option value="' . $filas['nombre'] . '">' . $filas['nombre'] . '</option>';
-										}
-									}
+									echo '<option value="' . $fila['distribuidor'] . '">' . $fila['distribuidor'] . '</option>';
 								?>
 							</select>
 							
@@ -121,15 +110,12 @@
 								}
 							
 							?>
-							
-							<p>Fecha</p>
-							<input type="date" name="fecha" id="fecha" value="<?php echo date('Y-m-d'); ?>"/>
-							<input type="text" name="codigo" id="codigo" class="fade" value="<?php echo $_GET['codigo'];?>" />
-											
+									
+							<input type="text" name="codigo" id="codigo" class="fade" value="<?php echo $_GET['codigo'];?>" />		
 							<div>
 								<br />
 								<input type="button" name="volver" id="volver" value="Principal" class="btn btn-large" onclick="window.location='index.php'"/>
-								<input type="submit" name="registrar" id="registrar" value="Registrar" class="btn btn-primary btn-large"/>	
+								<input type="submit" name="borrar" id="borrar" value="Borrar" class="btn btn-primary btn-large"/>	
 								<input type="button" name="volver" id="volver" value="Ir a stock" class="btn btn-success btn-large" onclick="window.location='consultarStock.php'"/>
 								<input type="button" name="volver" id="volver" value="Ir a ventas" class="btn btn-success btn-large" onclick="window.location='consultarVenta.php'"/>
 								<input type="button" name="volver" id="volver" value="Ir a ganancias" class="btn btn-success btn-large" onclick="window.location='consultarGanancias.php'"/>
